@@ -10,6 +10,7 @@ def user= "NAME=DANISH"
 //podTemplate {
   node('DANISH_MACHINE'){
     checkout scm
+	
 	 prependToFile(file: 'version.properties', content: user)
 	 props = readProperties(file: 'version.properties')
     
