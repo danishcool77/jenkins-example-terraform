@@ -5,11 +5,11 @@ def d = [
 ]
 
 def props = [:]
-
+def user= 'NAME:DANISH'
 //podTemplate {
   node('DANISH_MACHINE'){
     checkout scm
-	  prependToFile(file: 'version.properties', content: 'NAME:DANISH')
+	  prependToFile(file: 'version.properties', content: user)
 	 props = readProperties(defaults: d, file: 'version.properties')
     
 	
@@ -29,7 +29,7 @@ pipeline {
 	steps
 	{
 	script
-	{ 		echo "${props["terraform.version"]}"
+	{ 		//echo "${props["terraform.version"]}"
 		 echo "${props["NAME"]}"
     }
 	}
