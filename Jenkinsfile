@@ -2,11 +2,11 @@ def d = [
   'terraform.version':'1.0.0',
   'tfsec.version':'v0.57.1',
   'tflint.version':'v0.32.0',
-	'NAME':'SOHAIL'
+
 ]
 
 def props = [:]
-def user= "NAME=DANISH,"
+def user= "DANISH"
 //podTemplate {
   node('DANISH_MACHINE'){
     checkout scm
@@ -32,7 +32,7 @@ pipeline {
 	script
 	{ 	echo "${props}"
 	 echo "printing name"
-		 echo "${props["NAME"]}"
+		 echo "${props["DANISH"]}"
     }
 	}
 	}
