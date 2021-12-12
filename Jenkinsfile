@@ -32,6 +32,9 @@ pipeline {
 	{ 	echo "${props}"
 		 echo "printing name"
 		 echo "${props["NAME"]}"
+	  echo "printing city"
+		 echo "${props["CITY"]}"
+	 
     }
 	}
 	}
