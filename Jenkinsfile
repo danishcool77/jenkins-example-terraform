@@ -6,7 +6,7 @@ def d = [
 ]
 
 def props = [:]
-def user= ['NAME':'DANISH']
+def user= 'NAME=DANISH'
 //podTemplate {
   node('DANISH_MACHINE'){
     checkout scm
