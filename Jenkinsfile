@@ -10,7 +10,7 @@ def user= "'NAME'=DANISH'"
     checkout scm
 	
 	 prependToFile(file: 'version.properties', content: user)
-	 props = readProperties( defaults:d, file: 'version.properties')
+	 props = readProperties(file: 'version.properties')
     
 	
   }
