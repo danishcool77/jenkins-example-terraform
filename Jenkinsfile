@@ -19,18 +19,21 @@ podTemplate {
 pipeline {
 	agent {
 	
-	label 'DANISH_MACHINE'}
+	label 'DANISH_MACHINE'
+	}
   stages
   {
   stage('prop-file-reading')
     {
-		    {
-	steps{
-	script{ echo "${props["terraform.version"]}"
+
+	steps
+	{
+	script
+	{ 		echo "${props["terraform.version"]}"
 		 echo "${props["NAME"]}"
     }
 	}
 	}
-  }
+  
 }
 }
