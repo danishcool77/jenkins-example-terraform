@@ -1,15 +1,12 @@
-def d = [
-  'city':'JAIPUR',
-	
- ]
+
 
 def props = [:]
-def user= "'NAME'=DANISH'"
+def age= "AGE=27"
 //podTemplate {
   node('DANISH_MACHINE'){
     checkout scm
 	
-	// prependToFile(file: 'version.properties', content: user)
+	 prependToFile(file: 'version.properties', content: age)
 	 props = readProperties(file: 'version.properties')
     
 	
@@ -34,6 +31,8 @@ pipeline {
 		 echo "${props["NAME"]}"
 	  echo "printing city"
 		 echo "${props["CITY"]}"
+	 echo "printing age"
+		 echo "${props["AGE"]}"
 	 
     }
 	}
