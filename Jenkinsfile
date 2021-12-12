@@ -9,8 +9,9 @@ def props = [:]
 podTemplate {
   node('DANISH_MACHINE') {
     checkout scm
+	prependToFile(file: 'version.properties', content: 'DANISH')
     props = readProperties(defaults: d, file: 'version.properties')
-	prependToFile(file: 'version.properties', content: 'name=danish')
+	
   }
 }
 
