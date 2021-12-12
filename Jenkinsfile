@@ -1,15 +1,16 @@
 def d = [
-  'user.city':'JAIPUR',
+  'city':'JAIPUR',
+	
  ]
 
-def props = [=]
-def user= 'NAME=DANISH,'
+def props = [:]
+def user= "'NAME'=DANISH'"
 //podTemplate {
   node('DANISH_MACHINE'){
     checkout scm
 	
 	 prependToFile(file: 'version.properties', content: user)
-	 props = readProperties(file: 'version.properties')
+	 props = readProperties( defaults:d, file: 'version.properties')
     
 	
   }
