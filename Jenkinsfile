@@ -6,7 +6,7 @@ def d = [
 
 def props = [:]
 
-podTemplate {
+//podTemplate {
   node('DANISH_MACHINE'){
     checkout scm
 	//  prependToFile(file: 'version.properties', content: 'NAME:DANISH')
@@ -14,7 +14,7 @@ podTemplate {
     
 	
   }
-}
+//}
 
 pipeline {
 	agent {
