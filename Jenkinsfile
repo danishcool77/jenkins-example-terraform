@@ -19,9 +19,12 @@ pipeline {
   }
   stages
   {
-  stage
+  stage('prop-file-reading')
     {
+	steps
+	{
     echo '${props["terraform.version"]}'
     }
+	}
   }
 }
