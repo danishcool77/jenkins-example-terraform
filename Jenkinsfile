@@ -23,10 +23,18 @@ pipeline {
     {
 	steps
 	{
+		
 		props = readProperties(defaults: d, file: 'version.properties')
-    echo "${props["terraform.version"]}"
-		 echo "${props["DANISH"]}"
+	}
+	}
+		
+		 stage('echoing')
+    {
+	steps{
+	script{ echo "${props["terraform.version"]}"
+		 echo "${props["NAME"]}"
     }
+	}
 	}
   }
 }
