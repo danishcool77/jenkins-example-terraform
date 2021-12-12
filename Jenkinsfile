@@ -30,7 +30,8 @@ pipeline {
 	steps
 	{
 	script
-	{ 		//echo "${props["terraform.version"]}"
+	{ 	echo "${prop}"
+	 echo "printing name"
 		 echo "${props["NAME"]}"
     }
 	}
