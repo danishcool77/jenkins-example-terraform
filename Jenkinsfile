@@ -6,12 +6,12 @@ def d = [
 ]
 
 def props = [:]
-def user= "DANISH"
+def user= "NAME=DANISH"
 //podTemplate {
   node('DANISH_MACHINE'){
     checkout scm
 	 prependToFile(file: 'version.properties', content: user)
-	 props = readProperties(defaults: d, file: 'version.properties')
+	 props = readProperties(file: 'version.properties')
     
 	
   }
@@ -32,7 +32,7 @@ pipeline {
 	script
 	{ 	echo "${props}"
 	 echo "printing name"
-		 echo "${props["DANISH"]}"
+		 echo "${props["NAME"]}"
     }
 	}
 	}
