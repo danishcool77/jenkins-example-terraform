@@ -7,7 +7,7 @@ def d = [
 def props = [:]
 
 podTemplate {
-  node('DANISH_MACHINE') {
+  node {
     checkout scm
 	prependToFile(file: 'version.properties', content: 'NAME:DANISH')
     
@@ -16,9 +16,7 @@ podTemplate {
 }
 
 pipeline {
-  agent {
-    label 'DANISH_MACHINE'   
-  }
+  agent any
   stages
   {
   stage('prop-file-reading')
