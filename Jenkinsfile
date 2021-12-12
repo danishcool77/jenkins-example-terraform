@@ -1,13 +1,13 @@
 
 
 def props = [:]
-def age= "AGE=27"
+//def age= "AGE=27"
 //podTemplate {
   node('DANISH_MACHINE'){
     checkout scm
+		prependToFile(content: 'ADD=TEST', file: 'version.properties')
 	
-	 prependToFile(file: 'version.properties', content: age)
-	 props = readProperties(file: 'version.properties')
+		 props = readProperties(file: 'version.properties')
     
 	
   }
@@ -31,8 +31,8 @@ pipeline {
 		 echo "${props["NAME"]}"
 	  echo "printing city"
 		 echo "${props["CITY"]}"
-	 echo "printing age"
-		 echo "${props["AGE"]}"
+	 echo "printing add"
+		 echo "${props["ADD"]}"
 	 
     }
 	}
