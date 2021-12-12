@@ -30,7 +30,7 @@ pipeline {
 	steps
 	{
 	script
-	{ 	echo "${prop}"
+	{ 	echo "${props}"
 	 echo "printing name"
 		 echo "${props["NAME"]}"
     }
