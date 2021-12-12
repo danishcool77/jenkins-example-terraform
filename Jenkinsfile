@@ -9,7 +9,7 @@ def user= "'NAME'=DANISH'"
   node('DANISH_MACHINE'){
     checkout scm
 	
-	 prependToFile(file: 'version.properties', content: user)
+	// prependToFile(file: 'version.properties', content: user)
 	 props = readProperties(file: 'version.properties')
     
 	
@@ -30,7 +30,7 @@ pipeline {
 	{
 	script
 	{ 	echo "${props}"
-	 echo "printing name"
+		 echo "printing name"
 		 echo "${props["NAME"]}"
     }
 	}
