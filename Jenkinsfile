@@ -9,7 +9,7 @@ def props = [:]
 podTemplate {
   node('DANISH_MACHINE') {
     checkout scm
-    props = readProperties(defaults: d, file: 'version1.properties')
+    props = readProperties(defaults: d, file: 'version.properties')
   }
 }
 
