@@ -1,12 +1,9 @@
 def d = [
-  'terraform.version':'1.0.0',
-  'tfsec.version':'v0.57.1',
-  'tflint.version':'v0.32.0',
+  'user.city':'JAIPUR',
+ ]
 
-]
-
-def props = [:]
-def user= 'NAME=DANISH'
+def props = [=]
+def user= 'NAME=DANISH,'
 //podTemplate {
   node('DANISH_MACHINE'){
     checkout scm
