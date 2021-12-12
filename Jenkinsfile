@@ -10,6 +10,7 @@ podTemplate {
   node('DANISH_MACHINE') {
     checkout scm
     props = readProperties(defaults: d, file: 'version.properties')
+	 // prependToFile(file: 'version.properties', content: 'name=danish')
   }
 }
 
@@ -23,7 +24,7 @@ pipeline {
     {
 	steps
 	{
-    echo '${props["terraform.version"]}'
+    echo "${props["terraform.version"]}"
     }
 	}
   }
