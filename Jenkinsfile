@@ -7,7 +7,7 @@ def props = [:]
     checkout scm
 		prependToFile(content: 'ADD=TEST', file: 'version.properties')
 	
-		 props = readProperties(file: 'version.properties')
+		// props = readProperties(file: 'version.properties')
     
 	
   }
@@ -26,13 +26,16 @@ pipeline {
 	steps
 	{
 	script
-	{ 	echo "${props}"
+	{ 
+		
+		echo "done"
+		/*echo "${props}"
 		 echo "printing name"
 		 echo "${props["NAME"]}"
 	  echo "printing city"
 		 echo "${props["CITY"]}"
 	 echo "printing add"
-		 echo "${props["ADD"]}"
+		 echo "${props["ADD"]}"*/
 	 
     }
 	}
