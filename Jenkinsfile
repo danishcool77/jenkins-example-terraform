@@ -1,7 +1,7 @@
 
 
 def props = [:]
-//def age= "AGE=27"
+
 //podTemplate {
   node('DANISH_MACHINE'){
     checkout scm
